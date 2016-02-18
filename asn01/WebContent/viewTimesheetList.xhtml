@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+   <h:head>
+      <title>#{msgs.viewTimesheet}</title>
+      <h:outputStylesheet library="css" name="main.css"  />
+      
+   </h:head>
+   <h:body styleClass="dark globalStyles">
+   <h:form>
+	   <h:commandLink styleClass="backBtn" action="welcome">
+	   		<h:graphicImage styleClass="backBtnImg" value="/resources/images/back-btn.png" />
+	   </h:commandLink>  
+   </h:form>
+   
+   <h:panelGroup layout="block" styleClass="lightText title" >
+   		<h:outputText value="Employee Timesheets"/>
+   		<h:graphicImage styleClass="titleIcon" value="/resources/images/view-timesheet.png" />
+   </h:panelGroup>
+
+   <h:form styleClass="txtCenter upperPadding">
+   	<h:panelGroup layout="block">
+         <h:dataTable binding="#{table}" styleClass="table-center" rowClasses="paddingCell" columnClasses="wideCell" 
+            border="3" value="#{tableSheets.sheetlist}" var="timesheet">
+            <h:column>
+            	<h:outputText value="Timesheet"/>
+            </h:column>
+            <h:column>
+            	<h:outputText value="#{table.rowIndex}"/>
+            </h:column>
+            <h:column>
+            	<h:commandLink styleClass="btnNoBG editBtn" action ="#{tableSheets.returnView(table.rowIndex)}">
+            		<h:graphicImage styleClass="editIco" value="/resources/images/viewIco.png" alt="View"/> 
+            	</h:commandLink>
+            </h:column>
+         </h:dataTable>
+   	</h:panelGroup>
+   </h:form>
+   </h:body>
+</html>

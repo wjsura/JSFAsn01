@@ -1,0 +1,258 @@
+@CHARSET "ISO-8859-1";
+/* Global Styles
+ *===================================*/
+.globalStyles
+{
+	font-family:sans-serif;
+}
+.upperPadding
+{
+	padding:2em 0 0 0;
+}
+.upperMargin
+{
+	margin-top:1.5em;
+}
+.displayBlock
+{
+	display:block;
+}
+.displayInline
+{
+	display:inline-block;
+}
+.whiteText 
+{
+	color:white;
+}
+.light
+{
+	background-color:#aad0aa;
+}
+.lightText
+{
+	color:#aad0aa;
+}
+.dark
+{
+	background-color:#5aa65a;
+}
+.darkText 
+{
+	color:#71a971;
+}
+.title
+{
+	display: block;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bolder;
+}
+.titleIcon
+{
+	width:1em;
+	vertical-align:middle;
+	padding:0 10px;
+}
+.btn 
+{
+	background-color:#aad0aa;
+	border:none;
+	padding:0.5em 1em;
+	border-radius: 10px;
+	font-size:1em;
+	font-weight:900;
+    text-decoration:none;
+}
+.btn:hover
+{
+	background-color:#87B787;
+	cursor:pointer;
+}
+.inlineBtn
+{
+	margin:0 0.5em;
+}
+.backBtn:hover img
+{
+	opacity:0.6;
+}
+.backBtnImg
+{
+	float:left;
+	width:55px;
+}
+.logoutBtnImg
+{
+	float:left;
+	width:40px;
+	padding-right:10px;
+}
+.logoutBtn
+{
+	font-size:2em;
+	text-decoration:none;
+}
+.logoutBtn:hover
+{
+	opacity:0.2;
+}
+.logoutBtn:hover img
+{
+	opacity:0.6;
+}
+.resetBtnImg
+{
+	float:left;
+	width:40px;
+	padding-right:10px;
+}
+.resetBtn 
+{
+	font-size:2em;
+	text-decoration:none;
+	float:right;
+}
+.resetBtn:hover
+{
+	opacity:0.2;
+}
+.resetBtn:hover img
+{
+	opacity:0.6;
+}
+.txtCenter
+{
+	text-align:center;
+}
+.input
+{
+	margin:0 auto;
+	margin-bottom:2em;
+}
+.table-center
+{
+	margin:0 auto;
+	margin-bottom:1em;
+	border-collapse: collapse;
+}
+table, tr, th, td 
+{
+	border-color:#327132;
+	border-style:solid;
+}
+tr:hover 
+{
+	background-color:#90bb90;
+}
+.btnNoBG 
+{
+	background:none;
+	border:none;
+}
+/* Login Page Styles
+ *===================================*/
+.loginPanel 
+{
+	background-color:#327132;
+	border-radius: 15px;
+	width: 20em;
+	margin: 5em auto;
+	padding:2em;
+	text-align:center;
+}
+.loginTitle 
+{
+	display: block;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bolder;
+    margin: 0 0 1em 0;
+}
+.loginLabel 
+{
+	font-weight:900;
+	font-size:20px;
+}
+#loginPass 
+{
+	margin: 0 0 0 5px;
+}
+
+/* Welcome Home Page Styles
+ *===================================*/
+ #welcomeTitle
+ {
+ 	font-size:4em;
+ 	display:block;
+ 	font-weight:900;
+ 	text-align:center;
+ }
+.buttonRow
+{
+	text-align:center;
+	margin:0 0 1em 0;
+}
+.editTimeFix
+{
+	padding-left:20px;
+}
+/* View Timesheets
+ *====================================*/
+ .wideCell
+ {
+ 	width:15em;
+ 	text-align:center;
+ }
+ .paddingCell td
+ {
+ 	padding:0.5em;
+ }
+ /*Edit Users
+  *=========================================*/
+ span.editBtn
+ {
+ 	display:none;
+ }
+ .editIco
+ {
+	width:2em;
+ }
+ .editIco:hover
+ {
+ 	opacity:0.5;
+ }
+ .doneIco
+ {
+ 	width:2em;
+ }
+ .doneIco:hover
+ {
+ 	opacity:0.5;
+ }
+ /*Remove Users
+  *===========================================*/
+ .removeIco
+ {
+ 	width:2em;
+ }
+ .removeIco:hover
+ {
+ 	opacity:0.5;
+ }
+ /*Change Password
+  *=============================================*/
+.errorPass
+{
+	color:#E00000;
+	font-weight:bold;
+	display:block;
+	padding-bottom:1em;
+}
+/*Login Password
+*=============================================*/
+.errorLogin
+{
+	color:#E00000;
+	font-weight:bold;
+}

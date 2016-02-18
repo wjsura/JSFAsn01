@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#editTimesheet.xhtml"
+  PATH="/editTimesheet.xhtml" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#editTimesheet.xhtml:0" NAME="item"
+   PATH="/editTimesheet.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="redirect::#editTimesheetList.xhtml"
+    NAME="output" PATH="/editTimesheetList.xhtml"
+    TARGET="rules:#editTimesheetList.xhtml" TITLE="redirect" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#editTimesheetList.xhtml"
+  PATH="/editTimesheetList.xhtml" SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+   <h:head>
+      <title>#{msgs.editTimesheet}</title>
+      <h:outputStylesheet library="css" name="main.css"  />
+      
+   </h:head>
+   <h:body styleClass="dark globalStyles">
+   <h:form>
+	   <h:commandLink styleClass="backBtn" action="viewTimesheetList">
+	   		<h:graphicImage styleClass="backBtnImg" value="/resources/images/back-btn.png" />
+	   </h:commandLink>  
+   </h:form>
+   
+   <h:panelGroup layout="block" styleClass="lightText title" >
+   		<h:outputText value="Timesheet"/>
+   		<h:graphicImage styleClass="titleIcon" value="/resources/images/view-timesheet.png" />
+   </h:panelGroup>
+	<table>
+		<tr>
+			<td>E Number: <h:outputText value="#{tableData.getEmpNum()}"/></td>
+			<td>Week Number: <h:outputText value="#{tableSheets.sheetlist[tableSheets.index].getWeekNumber()}"/></td>
+			<td>Week Ending: <h:outputText value="#{tableSheets.sheetlist[tableSheets.index].endWeek}"/></td>
+		</tr>
+		<tr>
+			<td>Name: <h:outputText value="#{tableData.getEmpName()}"/></td>
+		</tr>
+	</table>
+   <h:form styleClass="txtCenter upperPadding">
+   	<h:panelGroup layout="block">
+         <h:dataTable styleClass="table-center" rowClasses="paddingCell" columnClasses="wideCell" 
+            border="3" value="#{tableSheets.sheetlist[tableSheets.index].details}" var="timesheet">
+            <h:column>
+            <f:facet name="header">
+            	<h:outputText value="Project"/>
+            </f:facet>
+            	<h:outputText value="#{timesheet.projectID}"/>           	
+            </h:column>
+            <h:column>
+            <f:facet name="header">
+            	<h:outputText value="WP"/>
+            </f:facet>            
+            	<h:outputText value="#{timesheet.workPackage}"/>          
+            </h:column> 
+            <h:column>
+            <f:facet name="header">
+            	<h:outputText value="Total"/>
+            </f:facet>            
+            	<h:outputText value="#{timesheet.total}"/>
+            </h:column>
+            <h:column> 
+            <f:facet name="header">
+            	<h:outputText value="Sat"/>
+            </f:facet>            
+            	<h:outputText value="#{timesheet.saturday}"/>
+            </h:column> 
+            <h:column>
+            <f:facet name="header">
+            	<h:outputText value="Sun"/>
+            </f:facet>            
+            	<h:outputText value="#{timesheet.sunday}"/>
+            </h:column> 
+            <h:column>
+            <f:facet name="header">
+            	<h:outputText value="Mon"/>
+            </f:facet>            
+            	<h:outputText value="#{timesheet.monday}"/>
+            </h:column>
+            <h:column>
+            <f:facet name="header">
+            	<h:outputText value="Tue"/>
+            </f:facet>            
+            	<h:outputText value="#{timesheet.tuesday}"/>
+            </h:column>
+            <h:column> 
+            <f:facet name="header">
+            	<h:outputText value="Wed"/>
+            </f:facet>            
+            	<h:outputText value="#{timesheet.wednesday}"/>
+            </h:column> 
+            <h:column>
+            <f:facet name="header">
+            	<h:outputText value="Thurs"/>
+            </f:facet>            
+            	<h:outputText value="#{timesheet.thursday}"/>
+            </h:column> 
+            <h:column>
+            <f:facet name="header">
+            	<h:outputText value="Fri"/>
+            </f:facet>            
+            	<h:outputText value="#{timesheet.friday}"/>
+            </h:column>                                                                     
+            <h:column>
+            <f:facet name="header">
+            	<h:outputText value="Notes"/>
+            </f:facet>            
+            	<h:outputText value="#{timesheet.notes}"/>
+            </h:column>
+         </h:dataTable>
+   	</h:panelGroup>
+   </h:form>
+   </h:body>
+</html>

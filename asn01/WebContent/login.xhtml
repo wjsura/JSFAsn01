@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+   <h:head>
+      <title>#{msgs.loginTitle}</title>
+      <h:outputStylesheet library="css" name="main.css"  />
+      
+   </h:head>
+   <h:body styleClass="dark globalStyles">
+   <h:form>
+		<h:panelGroup layout="block" styleClass="loginPanel">
+		   <h:outputText styleClass="loginTitle lightText" value="#{msgs.loginTitle}"/>
+		   <h:panelGrid columns="2" styleClass="input">
+			   <h:outputLabel for="loginUsername" styleClass="lightText loginLabel" value="#{msgs.username}"/>
+			   <h:inputText type="text" id="loginUsername" value="#{tableData.credentials.userName}"/>
+		   </h:panelGrid>
+		   <h:panelGrid columns="2" styleClass="input">
+			   <h:outputLabel for="loginPass" styleClass="lightText loginLabel" value="#{msgs.pass}"/>
+			   <h:inputSecret type="text" id="loginPass" value="#{tableData.credentials.password}"/>
+		   </h:panelGrid>
+		   <h:outputText rendered="#{not tableData.validLogin}" styleClass="errorLogin" value="#{msgs.wrongLogin}" />
+		   <h:commandButton styleClass="darkText btn upperMargin" value="#{msgs.loginBtn}" action="#{tableData.validateLogin}"/>
+		</h:panelGroup> 
+   </h:form>
+   </h:body>
+</html>

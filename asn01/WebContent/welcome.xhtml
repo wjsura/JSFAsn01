@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+   <h:head>
+      <title>#{msgs.welcomeTitle}</title>
+      <h:outputStylesheet library="css" name="main.css"  />
+      
+   </h:head>
+   <h:body styleClass="dark globalStyles">
+	   <h:form>
+		   <h:commandLink styleClass="whiteText logoutBtn" action="#{tableData.logout()}">
+		   		<h:graphicImage styleClass="logoutBtnImg" value="/resources/images/logout.png" />
+		   		<h:outputText value="#{msgs.logout}" />
+		   </h:commandLink>  
+   		</h:form>
+   		<h:outputFormat id="welcomeTitle" styleClass="lightText" value="#{msgs.welcomeSlogan}">
+   			<f:param value="#{tableData.getEmpName()}"/>
+   		</h:outputFormat>
+   		
+   		<h:form styleClass="upperPadding">
+    		<h:panelGroup layout="block" styleClass="buttonRow">
+   				<h:commandLink styleClass="whiteText btn inlineBtn displayInline" action="viewTimesheetList">
+    				<h:graphicImage value="/resources/images/view-timesheet.png" />
+    				<h:outputText styleClass="displayBlock" value="#{msgs.viewTimesheet}"/>
+    			</h:commandLink>
+   				<h:commandLink styleClass="whiteText btn inlineBtn displayInline" action="editTimesheetList">
+    				<h:graphicImage styleClass="editTimeFix" value="/resources/images/edit-timesheet.png" />
+    				<h:outputText styleClass="displayBlock" value="#{msgs.editTimesheet}"/>
+    			</h:commandLink>
+   				<h:commandLink styleClass="whiteText btn inlineBtn displayInline" action="createTimesheet">
+    				<h:graphicImage value="/resources/images/create-timesheet.png" />
+    				<h:outputText styleClass="displayBlock" value="#{msgs.createTimesheet}"/>
+    			</h:commandLink>
+   			</h:panelGroup>  
+    		<h:panelGroup layout="block" styleClass="buttonRow" rendered="#{tableData.superUser}">
+    			<h:commandLink styleClass="whiteText btn inlineBtn displayInline" action="viewUsersList">
+    				<h:graphicImage value="/resources/images/view-users.png" />
+    				<h:outputText styleClass="displayBlock" value="#{msgs.viewUsers}"/>
+    			</h:commandLink>
+   				<h:commandLink styleClass="whiteText btn inlineBtn displayInline" action="editUsersList">
+    				<h:graphicImage value="/resources/images/edit-users.png" />
+    				<h:outputText styleClass="displayBlock" value="#{msgs.editUsers}"/>
+    			</h:commandLink>
+   				<h:commandLink styleClass="whiteText btn inlineBtn displayInline" action="createUsers">
+    				<h:graphicImage value="/resources/images/add-users.png" />
+    				<h:outputText styleClass="displayBlock" value="#{msgs.createUsers}"/>
+    			</h:commandLink>
+   				<h:commandLink styleClass="whiteText btn inlineBtn displayInline" action="removeUsersList">
+    				<h:graphicImage value="/resources/images/remove-users.png" />
+    				<h:outputText styleClass="displayBlock" value="#{msgs.removeUsers}"/>
+    			</h:commandLink>
+   			</h:panelGroup>		
+   		</h:form>
+
+	   <h:form>
+		   <h:commandLink styleClass="whiteText resetBtn" action="resetPassword">
+		   		<h:graphicImage styleClass="resetBtnImg" value="/resources/images/reset-ico.png" />
+		   		<h:outputText value="#{msgs.resetPass}" />
+		   </h:commandLink>  
+   		</h:form>
+   </h:body>
+</html>

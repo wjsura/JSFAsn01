@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+   <h:head>
+      <title>#{msgs.removeUsers}</title>
+      <h:outputStylesheet library="css" name="main.css"  />
+      
+   </h:head>
+   <h:body styleClass="dark globalStyles">
+   <h:form>
+	   <h:commandLink styleClass="backBtn" action="welcome">
+	   		<h:graphicImage styleClass="backBtnImg" value="/resources/images/back-btn.png" />
+	   </h:commandLink>  
+   </h:form>
+   
+   <h:panelGroup layout="block" styleClass="lightText title" >
+   		<h:outputText value="#{msgs.removeUsers}"/>
+   		<h:graphicImage styleClass="titleIcon" value="/resources/images/remove-users.png" />
+   </h:panelGroup>
+
+   <h:form styleClass="txtCenter upperPadding">
+   	<h:panelGroup layout="block">
+         <h:dataTable styleClass="table-center" rowClasses="paddingCell" columnClasses="wideCell" 
+            border="3" value="#{tableData.employees}" var="employee">
+            <h:column>
+               <f:facet name="header">Name</f:facet>
+               #{employee.name},
+            </h:column>
+            <h:column>
+               <f:facet name="header">Employee Number</f:facet>
+               #{employee.empNumber}
+            </h:column>
+            <h:column>
+               <f:facet name="header">Employee ID</f:facet>
+               #{employee.userName}
+            </h:column>              
+            <h:column>
+               <h:commandLink action="#{tableData.deleteEmp(employee)}">
+               		<h:graphicImage styleClass="removeIco" value="/resources/images/removeIco.png" />
+               </h:commandLink>
+            </h:column>
+         </h:dataTable> 
+   	</h:panelGroup>
+   </h:form>
+   </h:body>
+</html>
